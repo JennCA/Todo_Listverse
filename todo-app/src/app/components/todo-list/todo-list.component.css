@@ -1,0 +1,61 @@
+.card {
+    width: 100%;
+    /* width: 40%; */
+    /* margin: 20px 10px 20px 20px; */
+}
+
+.field {
+    width: 80%;
+    margin-right: 10px;
+    /* width: 80%; */
+    /* margin: 20px 10px 20px 20px; */
+  /* min-width: 300px;
+  max-width: 320px;
+  margin-top: 20px; */
+  /* line-height: 30px; */
+}
+
+/* .todo {
+    margin-top: 20px;
+} */
+
+.todolist {
+    width: 100%;
+  /* min-width: 300px;
+  max-width: 320px; */
+  margin: 0 auto;
+}
+
+.list {
+    /* width: 100%;
+  text-align: center;
+  font-weight: 400; */
+  /* padding: 0px 20px !important; */
+}
+
+.todo-tb {
+  width: 100%;
+  background-color: #193369;
+  color: white;
+  font-weight: bold;
+}
+
+.todo-list {
+  overflow-y: auto;
+  height: 100%;
+  max-height: 500px;
+}
+
+.null-brd { border-radius: 0 !important; }
+.spacing { letter-spacing: 4px !important; }
+
+.mar-top { margin-top: 10px !important; }
+.mar-btn { margin: 0px 4px !important; }
+
+.ta-right { text-align: right !important; }
+.ta-left { text-align: left !important; }
+.ta-center { text-align: center !important; }
+
+.vert-top { vertical-align: top !important; }
+.vert-sub { vertical-align: sub !important; }
+.vert-super { vertical-align: super !important; }
