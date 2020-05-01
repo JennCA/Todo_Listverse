@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-6 mar-top">
-        <mat-card class="card ta-center">
+        <mat-card class="width ta-center">
             <h2 class="ta-left">Create Task</h2>
             <mat-form-field class="field">
                 <mat-label>Add a To-do to your list</mat-label>
@@ -14,28 +14,58 @@
 
     <div class="col-6 mar-top">
         <mat-toolbar class="todo-tb">
-        <div class="col-8">
-            <span class="spacing">Your To-dos</span>
-            <mat-icon class="vert-sub">list_alt</mat-icon>
-        </div>
+            <div class="col-8">
+                <span class="spacing">Your To-dos</span>
+                <mat-icon class="vert-sub">list_alt</mat-icon>
+            </div>
             <div class="col-8 ta-right">
-            <button mat-mini-fab (click)="deleteAllTodos()"><mat-icon class="vert-super">delete</mat-icon></button>
-        </div>
+                <button mat-mini-fab (click)="deleteAllTodos()"><mat-icon class="vert-super">delete</mat-icon></button>
+            </div>
         </mat-toolbar>
         <div class="todo-list">
-        <mat-card class="card null-brd" *ngFor="let todo of todos; let todoValue = index;">
-            <mat-list class="todolist" >
-                <mat-list-item class="list">
-                    <mat-checkbox class="todo col-8 ta-left">
-                        <span>{{ todo }}</span>
-                    </mat-checkbox>
-                    <div class="col-8 ta-right">
-                        <button mat-mini-fab class="mar-btn" [routerLink]="['/update']"><mat-icon class="vert-top">create</mat-icon></button>
-                        <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoValue)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
-                    </div>
-                </mat-list-item>
-            </mat-list>
-        </mat-card>
-    </div>
+            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoValue = index;">
+                <mat-list class="list">
+                    <mat-list-item>
+                        <div class="col-10 zero-lp">
+                            <div style="display: inline;" class="col-3 zero-lp"><mat-checkbox style="" class="mar-check ta-left"></mat-checkbox></div>
+                            <div style="display: inline;" class="col-9"><span contenteditable class="">{{ todo }}</span></div>
+                        </div>
+                        <div class="col-8 ta-right">
+                            <button mat-mini-fab class="mar-btn"><mat-icon class="vert-top">create</mat-icon></button>
+                            <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoValue)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card>
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-card>
+                <span contenteditable (input)="onNameChange($event.target.innerHTML)">{{ todo }}</span> -->
+                <!-- <input *ngIf="todo.canEditCode" [(ngModel)]="todo" type="text" class="form-control" /> -->
+            <!-- </mat-card> -->
+
+            <!-- <mat-card>
+        <span>{{todo}}</span>
+        <input *ngIf="todo.canEditCode" [(ngModel)]="todo" type="text" class="form-control" />
+    </mat-card> -->
+
+    <!-- <button mat-mini-fab class="mar-btn" (click)="todo.canEditCode = true"><mat-icon class="vert-top">create</mat-icon></button> -->

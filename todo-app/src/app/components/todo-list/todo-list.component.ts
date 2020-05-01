@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TodoListComponent implements OnInit {
   todos = JSON.parse(localStorage.getItem('todo')) || [];
@@ -14,15 +15,12 @@ export class TodoListComponent implements OnInit {
       this.todos.push(todoValue);
       localStorage.setItem('todo', JSON.stringify(this.todos));
     }
-    // console.log(this.todolist);
   }
 
   removeTodo(todoValue: number) : void {
     this.todos.splice(todoValue, 1);
     this.todos.slice(this.indexToRemove, 1);
     localStorage.setItem('todo', JSON.stringify(this.todos));
-    // console.log(this.todolist);
-    // console.log(localStorage);
   }
 
   deleteAllTodos() {
@@ -38,3 +36,30 @@ export class TodoListComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// onNameChange(val) {
+  //   console.log("Changed", val);
+  //   localStorage.setItem('todo', JSON.stringify(val));
+  //   localStorage.getItem('todo');
+  // }
