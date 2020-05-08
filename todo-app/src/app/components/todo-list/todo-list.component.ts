@@ -7,12 +7,21 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class TodoListComponent implements OnInit {
-  todos = JSON.parse(localStorage.getItem('todo')) || [];
+  todos :any[] = JSON.parse(localStorage.getItem('todo')) || [];
   indexToRemove = 1;
 
   addTodo(todoValue: string) {
     if (todoValue) {
       this.todos.push(todoValue);
+      localStorage.setItem('todo', JSON.stringify(this.todos));
+    }
+  }
+
+  editTask(todoValue: number){
+    let task = this.todos[todoValue];
+    let result = prompt("Edit Todo Task:", task);
+    if (result !== null && result !== ""){
+      this.todos[todoValue] = result;
       localStorage.setItem('todo', JSON.stringify(this.todos));
     }
   }

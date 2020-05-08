@@ -26,12 +26,12 @@
             <mat-card class="width null-brd" *ngFor="let todo of todos; let todoValue = index;">
                 <mat-list class="list">
                     <mat-list-item>
-                        <div class="col-10 zero-lp">
-                            <div class="col-3 inline zero-lp"><mat-checkbox class="mar-check ta-left"></mat-checkbox></div>
-                            <div class="col-9 inline"><span contenteditable class="">{{ todo }}</span></div>
+                        <div class="col-12 zero-lp">
+                            <mat-checkbox class="mar-check ta-left" autocomplete="off"></mat-checkbox>
+                            <span class="cross">{{ todo }}</span>
                         </div>
-                        <div class="col-8 ta-right">
-                            <button mat-mini-fab class="mar-btn"><mat-icon class="vert-top">create</mat-icon></button>
+                        <div class="col-8 ta-right zero-rp">
+                            <button mat-mini-fab class="mar-btn" (click)="editTask(todoValue)"><mat-icon class="vert-top">create</mat-icon></button>
                             <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoValue)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
                         </div>
                     </mat-list-item>
