@@ -29,10 +29,11 @@
   max-height: 500px;
 }
 
+.width { width: 100%; }
 .null-brd { border-radius: 0 !important; }
 .spacing { letter-spacing: 4px !important; }
-.zero-lp { padding-left: 0px !important;}
-.width { width: 100%; }
+.zero-lp { padding-left: 0px !important; }
+.inline { display: inline; }
 
 .mar-top { margin-top: 10px !important; }
 .mar-check { margin: 30px 10px !important; }
