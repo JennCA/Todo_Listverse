@@ -4,11 +4,32 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class TodoListComponent implements OnInit {
-  todos :any[] = JSON.parse(localStorage.getItem('todo')) || [];
+  todos = JSON.parse(localStorage.getItem('todo')) || [];
   indexToRemove = 1;
+  imgURL: any;
+  public message: string;
+ 
+  preview(files) {
+    if (files.length === 0) {
+      return;
+    }
+ 
+    var type = files[0].type;
+    if (type.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result; 
+    }
+  }
+  
 
   addTodo(todoValue: string) {
     if (todoValue) {
@@ -42,6 +63,7 @@ export class TodoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.todos);
   }
 
 }

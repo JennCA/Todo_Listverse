@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-update.component.css']
 })
 export class TodoUpdateComponent implements OnInit {
+  todos = JSON.parse(localStorage.getItem('todo')) || [];
 
   constructor() { }
 
