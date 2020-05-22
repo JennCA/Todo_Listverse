@@ -1,39 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
-  // encapsulation: ViewEncapsulation.None
 })
 export class TodoListComponent implements OnInit {
   todos = JSON.parse(localStorage.getItem('todo')) || [];
   indexToRemove = 1;
-  // imgURL: any;
-  // public message: string;
 
   save() {
     localStorage.setItem('todo', JSON.stringify(this.todos));
   }
  
-  // preview(files) {
-  //   if (files.length === 0) {
-  //     return;
-  //   }
- 
-  //   var type = files[0].type;
-  //   if (type.match(/image\/*/) == null) {
-  //     this.message = "Only images are supported.";
-  //     return;
-  //   }
- 
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(files[0]); 
-  //   reader.onload = (_event) => { 
-  //     this.imgURL = reader.result; 
-  //   }
-  // }
-
   addTodo(todoTitle: string) {
     if (todoTitle) {
       const newTodoTask = new TodoTask(todoTitle);
@@ -44,7 +23,6 @@ export class TodoListComponent implements OnInit {
 
   editTask(todoIndex: number) {
     localStorage.setItem('editIndex', JSON.stringify(todoIndex));
-
   }
 
   removeTodo(todoValue: number) : void {
@@ -62,9 +40,7 @@ export class TodoListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.todos);
-  }
+  ngOnInit() { }
 
 }
 

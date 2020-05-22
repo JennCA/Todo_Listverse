@@ -57,4 +57,7 @@
   .todo-list {
     max-height: 400px;
   }
+  .disable {
+    display: none;
+  }
 }

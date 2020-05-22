@@ -1,18 +1,26 @@
 .header {
   background-color: #193369;
-  color: white;
-  justify-content: center;
-  letter-spacing: 10px;
-  font-weight: bold;
+  text-align: center;
 }
 
-@media only screen and (max-width: 360px) {
+/* @media only screen and (max-width: 360px) {
   .header {
     letter-spacing: unset;
   }
-}
+} */
 
 .body {
   height: 100%;
-  background-image: linear-gradient(purple, midnightblue);
+  background: linear-gradient(black, #5ab9ea);
+}
+
+img {
+  width: 8%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  img {
+    width: 20%;
+  }
 }

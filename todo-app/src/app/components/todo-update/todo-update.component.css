@@ -1,0 +1,59 @@
+.field {
+    width: 80%;
+  }
+  
+  .list {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .mat-checkbox .mat-checkbox-frame {
+    transform: scale(1.5);
+  }
+  
+  .mat-checkbox-checked .mat-checkbox-background {
+    transform: scale(1.5);
+  }
+  
+  .mat-checkbox-checked + span.cross {
+    text-decoration: line-through;
+  }
+  
+  .todo-tb {
+    width: 100%;
+    background-color: #193369;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* .todo-list {
+    overflow-y: auto;
+    height: 100%;
+    max-height: 600px;
+    width: 100%;
+  } */
+  
+  .width { width: 100%; }
+  .null-brd { border-radius: 0 !important; }
+  .spacing { letter-spacing: 4px !important; }
+  
+  .zero-lp { padding-left: 0px !important; }
+  .zero-rp { padding-right: 0px !important; }
+  
+  .mar-top { margin-top: 10px !important; }
+  .mar-check { margin: 30px 10px !important; }
+  .mar-btn { margin: 0px 4px !important; }
+  
+  .ta-right { text-align: right !important; }
+  .ta-left { text-align: left !important; }
+  .ta-center { text-align: center !important; }
+  
+  .vert-top { vertical-align: top !important; }
+  .vert-sub { vertical-align: sub !important; }
+  .vert-super { vertical-align: super !important; }
+  
+  @media only screen and (max-width: 500px) {
+    .todo-list {
+      max-height: 400px;
+    }
+  }

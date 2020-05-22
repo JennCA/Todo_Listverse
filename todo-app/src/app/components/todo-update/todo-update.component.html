@@ -1,16 +1,26 @@
-<mat-card class="width ta-center">
-    <h2 class="ta-left">Edit Task</h2>
-    <mat-form-field class="field">
+<div class="row">
+    <div class="col-10 mar-top" style="position: absolute; left: 8%;">
+<mat-card class="width ta-center todo-list">
+    <div>
+    <h1 class="ta-left">Edit Task</h1>
+</div>
+    <div class="col-4" style="display: inline;">
+        <h3>Title</h3>
+    </div>
+    <mat-form-field class="field col-6" style="display: inline;">
+        
+        <div >
         <mat-label>Title</mat-label>
         <input #newTask.title matInput [(ngModel)]="todoTask.title">
+    </div>
     </mat-form-field>
+
     <mat-form-field class="field">
+        <h1>NOTES:</h1>
         <mat-label>Notes</mat-label>
-        <input #newTask.note matInput [(ngModel)]="todoTask.note">
+        <textarea #newTask.note matInput [(ngModel)]="todoTask.note" name="" id="" cols="30" rows="10"></textarea>
+        <!-- <input #newTask.note matInput [(ngModel)]="todoTask.note"> -->
     </mat-form-field>
-    <button mat-mini-fab (click)="updateTodo()" type="submit">
-        <mat-icon class="vert-top">add</mat-icon>
-    </button>
 
     <mat-card>
         <mat-card>
@@ -20,4 +30,10 @@
             <img [src]="todoTask.image" height="200" width="100%" *ngIf="todoTask.image" >
         </mat-card>
     </mat-card>
+
+    <button mat-raised-button (click)="updateTodo()" type="submit">Save changes
+        <!-- <mat-icon class="vert-top">add</mat-icon> -->
+    </button>
 </mat-card>
+    </div>
+</div>
