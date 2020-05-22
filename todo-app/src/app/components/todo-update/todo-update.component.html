@@ -1,5 +1,23 @@
-<p>todo-update works!</p>
+<mat-card class="width ta-center">
+    <h2 class="ta-left">Edit Task</h2>
+    <mat-form-field class="field">
+        <mat-label>Title</mat-label>
+        <input #newTask.title matInput [(ngModel)]="todoTask.title">
+    </mat-form-field>
+    <mat-form-field class="field">
+        <mat-label>Notes</mat-label>
+        <input #newTask.note matInput [(ngModel)]="todoTask.note">
+    </mat-form-field>
+    <button mat-mini-fab (click)="updateTodo()" type="submit">
+        <mat-icon class="vert-top">add</mat-icon>
+    </button>
 
-<div *ngFor="let todo of todos;">
-<h1>{{todo}}</h1>
-</div>
+    <mat-card>
+        <mat-card>
+            <h3>upload image:</h3>
+            <span style="color:red;" *ngIf="message">{{message}}</span>
+            <input #file type="file" accept='image/*' (change)="uploadImage(file.files)"/>
+            <img [src]="todoTask.image" height="200" width="100%" *ngIf="todoTask.image" >
+        </mat-card>
+    </mat-card>
+</mat-card>

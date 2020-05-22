@@ -10,14 +10,14 @@
                 <mat-icon class="vert-top">add</mat-icon>
             </button>
         </mat-card>
-        <mat-card>
+        <!-- <mat-card>
             <mat-card>
                 <h3>upload image:</h3>
                 <span style="color:red;" *ngIf="message">{{message}}</span>
                 <input #file type="file" accept='image/*' (change)="preview(file.files)" />
                 <img [src]="imgURL" height="200" width="100%" *ngIf="imgURL">
             </mat-card>
-        </mat-card>
+        </mat-card> -->
     </div>
 
     <div class="col-6 mar-top">
@@ -31,18 +31,17 @@
             </div>
         </mat-toolbar>
         <div class="todo-list">
-            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoValue = index;">
+            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoIndex = index;">
                 <mat-list class="list">
                     <mat-list-item>
                         <div class="col-12 zero-lp">
                             <mat-checkbox class="mar-check ta-left"></mat-checkbox>
-                            <span class="cross">{{ todo }}</span>
+                            <span class="cross">{{ todo.title }}</span>
                             <!-- <span class="cross" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">{{ todo }}</span> -->
                         </div>
                         <div class="col-8 ta-right zero-rp">
-                            <button mat-mini-fab class="mar-btn" [routerLink]="['/update']"><mat-icon class="vert-top">info</mat-icon></button>
-                            <button mat-mini-fab class="mar-btn" (click)="editTask(todoValue)"><mat-icon class="vert-top">create</mat-icon></button>
-                            <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoValue)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
+                            <button mat-mini-fab class="mar-btn" (click)="editTask(todoIndex)" [routerLink]="['/edit']"><mat-icon class="vert-top">create</mat-icon></button>
+                            <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoIndex)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
                         </div>
                     </mat-list-item>
                 </mat-list>

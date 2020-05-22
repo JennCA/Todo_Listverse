@@ -6,7 +6,7 @@ import { TodoUpdateComponent } from './components/todo-update/todo-update.compon
 
 const routes: Routes = [
   { path: 'list', component: TodoListComponent },
-  { path: 'update', component: TodoUpdateComponent },
+  { path: 'edit', component: TodoUpdateComponent },
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 

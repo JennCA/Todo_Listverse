@@ -9,48 +9,48 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class TodoListComponent implements OnInit {
   todos = JSON.parse(localStorage.getItem('todo')) || [];
   indexToRemove = 1;
-  imgURL: any;
-  public message: string;
+  // imgURL: any;
+  // public message: string;
+
+  save() {
+    localStorage.setItem('todo', JSON.stringify(this.todos));
+  }
  
-  preview(files) {
-    if (files.length === 0) {
-      return;
-    }
+  // preview(files) {
+  //   if (files.length === 0) {
+  //     return;
+  //   }
  
-    var type = files[0].type;
-    if (type.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      return;
-    }
+  //   var type = files[0].type;
+  //   if (type.match(/image\/*/) == null) {
+  //     this.message = "Only images are supported.";
+  //     return;
+  //   }
  
-    var reader = new FileReader();
-    reader.readAsDataURL(files[0]); 
-    reader.onload = (_event) => { 
-      this.imgURL = reader.result; 
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(files[0]); 
+  //   reader.onload = (_event) => { 
+  //     this.imgURL = reader.result; 
+  //   }
+  // }
+
+  addTodo(todoTitle: string) {
+    if (todoTitle) {
+      const newTodoTask = new TodoTask(todoTitle);
+      this.todos.push(newTodoTask);
+      this.save();
     }
   }
-  
 
-  addTodo(todoValue: string) {
-    if (todoValue) {
-      this.todos.push(todoValue);
-      localStorage.setItem('todo', JSON.stringify(this.todos));
-    }
-  }
+  editTask(todoIndex: number) {
+    localStorage.setItem('editIndex', JSON.stringify(todoIndex));
 
-  editTask(todoValue: number){
-    let task = this.todos[todoValue];
-    let result = prompt("Edit Todo Task:", task);
-    if (result !== null && result !== ""){
-      this.todos[todoValue] = result;
-      localStorage.setItem('todo', JSON.stringify(this.todos));
-    }
   }
 
   removeTodo(todoValue: number) : void {
     this.todos.splice(todoValue, 1);
     this.todos.slice(this.indexToRemove, 1);
-    localStorage.setItem('todo', JSON.stringify(this.todos));
+    this.save();
   }
 
   deleteAllTodos() {
@@ -66,6 +66,16 @@ export class TodoListComponent implements OnInit {
     console.log(this.todos);
   }
 
+}
+
+class TodoTask {
+  title: string;
+  note: string;
+  image: string;
+
+  constructor(theTitle: string) {
+    this.title = theTitle;
+  }
 }
 
 
