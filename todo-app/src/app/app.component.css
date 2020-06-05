@@ -9,13 +9,14 @@
   }
 } */
 
-.body {
+/* .body {
   height: 100%;
+  background: black;
   background: linear-gradient(black, #5ab9ea);
-}
+} */
 
 img {
-  width: 8%;
+  width: 6%;
   cursor: pointer;
 }
 

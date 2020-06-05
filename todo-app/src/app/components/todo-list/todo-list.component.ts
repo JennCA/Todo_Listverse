@@ -9,6 +9,21 @@ export class TodoListComponent implements OnInit {
   todos = JSON.parse(localStorage.getItem('todo')) || [];
   indexToRemove = 1;
 
+  // sortFunc(a, b) {
+  //   if ( a.title < b.title ){
+  //     return -1;
+  //   }
+  //   if ( a.title > b.title ){
+  //     return 1;
+  //   }
+  //   return 0;
+  // }
+
+  // sortArray() {
+  //   let Array = this.todos.sort((a, b) => a.title - b.title);
+  //   return Array;
+  // }
+
   save() {
     localStorage.setItem('todo', JSON.stringify(this.todos));
   }
@@ -40,7 +55,9 @@ export class TodoListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // this.sortFunc();
+  }
 
 }
 
@@ -56,27 +73,3 @@ class TodoTask {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// onNameChange(val) {
-  //   console.log("Changed", val);
-  //   localStorage.setItem('todo', JSON.stringify(val));
-  //   localStorage.getItem('todo');
-  // }

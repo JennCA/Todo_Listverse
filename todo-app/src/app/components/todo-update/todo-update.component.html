@@ -1,39 +1,33 @@
 <div class="row">
-    <div class="col-10 mar-top" style="position: absolute; left: 8%;">
-<mat-card class="width ta-center todo-list">
-    <div>
-    <h1 class="ta-left">Edit Task</h1>
-</div>
-    <div class="col-4" style="display: inline;">
-        <h3>Title</h3>
-    </div>
-    <mat-form-field class="field col-6" style="display: inline;">
-        
-        <div >
-        <mat-label>Title</mat-label>
-        <input #newTask.title matInput [(ngModel)]="todoTask.title">
-    </div>
-    </mat-form-field>
-
-    <mat-form-field class="field">
-        <h1>NOTES:</h1>
-        <mat-label>Notes</mat-label>
-        <textarea #newTask.note matInput [(ngModel)]="todoTask.note" name="" id="" cols="30" rows="10"></textarea>
-        <!-- <input #newTask.note matInput [(ngModel)]="todoTask.note"> -->
-    </mat-form-field>
-
-    <mat-card>
-        <mat-card>
-            <h3>upload image:</h3>
-            <span style="color:red;" *ngIf="message">{{message}}</span>
-            <input #file type="file" accept='image/*' (change)="uploadImage(file.files)"/>
-            <img [src]="todoTask.image" height="200" width="100%" *ngIf="todoTask.image" >
+    <div class="col-12 mar-top">
+        <mat-card class=" todo-list col">
+            <div>
+                <h1 class="ta-left">Edit Task</h1>
+            </div>
+            <div class="col-">
+                <div class="col-1">
+                    <h2>Title</h2>
+                </div>
+                <mat-form-field class="col-8">
+                    <input #newTask.title matInput [(ngModel)]="todoTask.title">
+                </mat-form-field> 
+            </div>
+            <div class="col-1">
+                <h2>Notes</h2>
+            </div>
+            <mat-form-field style="width: 60%; margin-left: 30px;">
+                <textarea #newTask.note matInput [(ngModel)]="todoTask.note" cols="30" rows="5" placeholder="Write your notes here..."></textarea>
+            </mat-form-field>
+            <mat-card class="mar-btm">
+                <h2>Upload image:</h2>
+                <span style="color:red;" *ngIf="message">{{message}}</span>
+                <input #file type="file" accept='image/*' (change)="uploadImage(file.files)"/>
+                <div class="mar-top">
+                    <img [src]="todoTask.image" height="auto" width="40%" *ngIf="todoTask.image" >
+                </div>
+            </mat-card>
+            <button mat-raised-button (click)="updateTodo()" [routerLink]="['/list']" type="submit" color="accent" style="font-weight: bold; margin-right: 10px;">Save changes</button>
+            <button mat-stroked-button [routerLink]="['/list']" color="accent" style="font-weight: bold; border: 2px solid;">Discard changes</button>
         </mat-card>
-    </mat-card>
-
-    <button mat-raised-button (click)="updateTodo()" type="submit">Save changes
-        <!-- <mat-icon class="vert-top">add</mat-icon> -->
-    </button>
-</mat-card>
     </div>
 </div>
