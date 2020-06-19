@@ -26,19 +26,33 @@
             </div>
         </mat-toolbar>
         <div class="todo-list">
-            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoIndex = index;">
+            <mat-card class="width null-brd" *ngFor="let todo of todos; let ind of indexes; let todoIndex = index;"><!-- [ngStyle]="{'background-image':'url(' + course.imageUrl + ')'}" -->
+                <!-- <div [ngStyle]="{'background-image':'url(' + ind.image + ')'}" > -->
                 <mat-list class="list">
+                    <div>
+                        <img src="{{ind.image}}" alt="" width="20%" height="auto" style="border: 2px solid #ddd; border-radius: 4px;">
+                    </div>
                     <mat-list-item>
                         <div class="col-12 zero-lp">
                             <mat-checkbox class="mar-check ta-left"></mat-checkbox>
-                            <span class="cross">{{ todo.title }}</span>
+                            <span class="cross">
+                                {{ todo.title }}
+                                <!-- <img src="{{ind.image}}" alt="" width="30%" height="auto"> -->
+                            </span>
                         </div>
                         <div class="col-8 ta-right zero-rp">
                             <button mat-mini-fab class="mar-btn" (click)="editTask(todoIndex)" [routerLink]="['/edit']"><mat-icon class="vert-top">create</mat-icon></button>
                             <button mat-mini-fab class="mar-btn" (click)="removeTodo(todoIndex)"><mat-icon class="vert-top">delete_forever</mat-icon></button>
                         </div>
+                        <!-- <div>
+                            <img src="{{ind.image}}" alt="" width="20%" height="auto">
+                        </div> -->
                     </mat-list-item>
+                    <!-- <div>
+                        <img src="{{ind.image}}" alt="" width="20%" height="auto">
+                    </div> -->
                 </mat-list>
+                <!-- </div> -->
             </mat-card>
         </div>
     </div>

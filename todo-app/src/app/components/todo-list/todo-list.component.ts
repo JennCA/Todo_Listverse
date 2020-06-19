@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
   // todos = JSON.parse(localStorage.getItem('todo')).sort(this.soFunc) || [];
   todos = JSON.parse(localStorage.getItem('todo')) || [];
+  indexes = JSON.parse(localStorage.getItem('editIndex'));
+
+  todoTask = this.todos[this.indexes];
   indexToRemove = 1;
 
   save() {
