@@ -11,7 +11,7 @@
             </button>
         </mat-card>
         <div class="ta-center disable">
-        <img src="../../../assets/images/logo.v3.png" class="width" alt="symbol">
+        <img src="../../../assets/images/logo.v3.png" class="width" alt="logo">
     </div>
     </div>
 
@@ -26,7 +26,7 @@
             </div>
         </mat-toolbar>
         <div class="todo-list">
-            <mat-card class="width null-brd" *ngFor="let todo of todos| orderBy: 'title'; let todoIndex = index;">
+            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoIndex = index;">
                 <mat-list class="list">
                     <mat-list-item>
                         <div class="col-12 zero-lp">
