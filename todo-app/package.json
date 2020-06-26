@@ -29,11 +29,14 @@
   },
   "devDependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular/cli": "~9.1.7",
     "@angular/compiler-cli": "~9.1.9",
     "@angular/language-service": "~9.1.9",
 =======
+=======
+>>>>>>> parent of f693a1d... not functioning
     "@angular-devkit/build-angular": "~0.803.21",
     "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
