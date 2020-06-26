@@ -1,17 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-
-body {
-  margin: 0;
-  overflow: auto;
-  background: linear-gradient(black, #5ab9ea);
-}
-
-* {
-  font-family: "Arial", cursive, sans-serif; 
-  box-sizing: border-box;
-}
+body { margin: 0; overflow: hidden; }
+* { font-family: "Arial", cursive, sans-serif; box-sizing: border-box; }
   
   [class*="col-"] {
     float: left;

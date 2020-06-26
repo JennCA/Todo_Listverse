@@ -11,7 +11,9 @@
             </button>
         </mat-card>
         <div class="ta-center disable">
-        <img src="../../../assets/images/logo.v3.png" class="width" alt="logo">
+
+        <img src="../../../assets/images/logo.v2.png" class="width" alt="symbol">
+
     </div>
     </div>
 
@@ -26,12 +28,11 @@
             </div>
         </mat-toolbar>
         <div class="todo-list">
-            <mat-card class="width null-brd" *ngFor="let todo of todos; let ind of indexes; let todoIndex = index;"><!-- [ngStyle]="{'background-image':'url(' + course.imageUrl + ')'}" -->
-                <!-- <div [ngStyle]="{'background-image':'url(' + ind.image + ')'}" > -->
+            <mat-card class="width null-brd" *ngFor="let todo of todos; let todoIndex = index;">
                 <mat-list class="list">
-                    <div>
+                    <!-- <div>
                         <img src="{{ind.image}}" alt="" width="20%" height="auto" style="border: 2px solid #ddd; border-radius: 4px;">
-                    </div>
+                    </div> -->
                     <mat-list-item>
                         <div class="col-12 zero-lp">
                             <mat-checkbox class="mar-check ta-left"></mat-checkbox>

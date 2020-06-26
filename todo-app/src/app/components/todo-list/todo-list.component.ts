@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
   // todos = JSON.parse(localStorage.getItem('todo')).sort(this.soFunc) || [];
   todos = JSON.parse(localStorage.getItem('todo')) || [];
-  indexes = JSON.parse(localStorage.getItem('editIndex'));
 
-  todoTask = this.todos[this.indexes];
   indexToRemove = 1;
 
   save() {
@@ -44,6 +42,7 @@ export class TodoListComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
     
   }
@@ -76,6 +75,7 @@ class TodoTask {
 
 
 
+
   // sortArray() {
   //   let Array = this.todos.sort((a, b) => a.title - b.title);
   //   return Array;
@@ -88,4 +88,3 @@ class TodoTask {
   //     return 1;
   //   }
   //   return 0;
-  // }
